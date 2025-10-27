@@ -1,0 +1,84 @@
+:root{
+  --bg-top:#0b1530;
+  --horizon:#0f2b3a;
+  --sun-core1:#fff0c2;
+  --sun-core2:#ffd07a;
+  --sun-edge:#ff6a20;
+  --sunset-deep:#7a1406;
+  --marigold:#ffb347;
+  --card:#fff7e6;
+  --sun-msg-bg: rgba(255,243,208,0.98);
+  --sun-msg-color: #3a1600;
+  --control-bg: rgba(0,0,0,0.52);
+  --control-accent: #ffcf6b;
+  --tap-size: 64px;
+  --glow: 0 12px 30px rgba(255,170,60,0.18);
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;font-family:Montserrat,system-ui,-apple-system; background:linear-gradient(180deg,var(--bg-top) 0%, #082035 40%, var(--horizon) 62%, #031218 100%);color:#fff;overflow-y:auto;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+.wrap{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px 12px 92px;text-align:center;position:relative}
+
+/* horizon/water */
+.horizon{position:absolute;left:0;right:0;bottom:26vh;height:22vh;pointer-events:none;z-index:4;background:linear-gradient(180deg, rgba(3,18,24,0) 0%, rgba(3,18,24,0.92) 100%);}
+.water-reflection{position:absolute;left:0;right:0;bottom:0;height:28vh;background:linear-gradient(180deg, rgba(10,30,40,0.12), rgba(3,12,18,0.6));filter:blur(6px);z-index:2}
+
+/* garland */
+.garland-wrap{width:100%;max-width:1200px;margin:6px auto 0;pointer-events:none;z-index:60}
+svg.marigold-garland{width:100%;height:110px;max-height:110px}
+.garland-group{transform-origin:50% 0;animation:sway 6.2s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:translateY(0) rotate(-0.8deg)}50%{transform:translateY(2px) rotate(0.8deg)}}
+
+/* sun */
+.sun-spot{position:relative;width:100%;max-width:920px;height:auto;margin-top:4.5vh;z-index:20;display:flex;align-items:flex-end;justify-content:center;pointer-events:none}
+.sun-glow{position:absolute;left:50%;transform:translateX(-50%);bottom:22vh;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle at 50% 40%, rgba(255,180,90,0.36), rgba(255,120,40,0.12) 35%, transparent 60%);filter:blur(42px);z-index:8}
+.sun-core-wrap{position:relative;width:280px;height:280px;display:flex;align-items:center;justify-content:center;z-index:12;transform:translateY(62px)}
+.sun-core{width:240px;height:240px;border-radius:50%;background:radial-gradient(circle at 35% 30%, var(--sun-core1) 0%, var(--sun-core2) 36%, var(--sun-edge) 70%, var(--sunset-deep) 100%);box-shadow:0 0 120px 40px rgba(255,120,50,0.16);border:2px solid rgba(255,150,70,0.06);display:flex;align-items:center;justify-content:center;padding:18px;position:relative;overflow:visible}
+.sun-rim{position:absolute;inset:0;border-radius:50%;box-shadow:inset 0 0 40px rgba(255,120,40,0.06), 0 8px 30px rgba(0,0,0,0.25);pointer-events:none}
+
+/* sun message */
+.sun-msg{display:block;width:100%;max-width:84%;min-width:48%;word-wrap:break-word;white-space:normal;text-align:center;font-family:'Playfair Display',serif;font-weight:800;color:var(--sun-msg-color);background:var(--sun-msg-bg);padding:10px 14px;border-radius:999px;box-shadow:0 16px 40px rgba(0,0,0,0.34), inset 0 -6px 18px rgba(0,0,0,0.04);opacity:0;transform:translateY(6px) scale(0.98);pointer-events:auto;z-index:22;line-height:1.28;transition:opacity .28s ease, transform .28s ease;font-size: clamp(13px, 2.8vw, 18px);overflow-wrap:break-word; word-break:break-word;position:relative}
+.sun-msg.show{opacity:1;transform:translateY(0) scale(1)}
+.sun-close{position:absolute; top:6px; right:8px; width:36px; height:36px; border-radius:9px; background:rgba(0,0,0,0.06); border:1px solid rgba(0,0,0,0.06); color:var(--sun-msg-color); display:flex;align-items:center;justify-content:center; font-weight:700; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.18); font-size:18px;}
+.sun-close:active{transform:scale(.96)}
+
+/* card */
+.card{max-width:860px;margin:8px auto 10px;padding:14px 18px;border-radius:12px;border:1px solid rgba(255,150,80,0.06);background:linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.03));z-index:6}
+.card h1{margin:0;font-family:'Playfair Display',serif;font-size:clamp(16px,3.2vw,22px);font-weight:800;color:#ffd69b}
+.card p{margin:8px 0 0;font-family:'Playfair Display',serif;color:#fff2df;font-size:clamp(13px,2.2vw,16px)}
+
+/* ========== DIYA GRID (All visible on phone) ========== */
+.diyas{display:grid;grid-template-columns: repeat(3, minmax(0, 1fr));gap:14px;width:100%;max-width:760px;margin:16px auto 0;padding:10px;justify-items:center;align-items:start;z-index:30}
+@media (min-width:560px){ .diyas{ grid-template-columns: repeat(5, 1fr); gap:18px; } }
+
+.diya{ width:120px; height:120px; display:flex; align-items:center; justify-content:center; position:relative; cursor:pointer; -webkit-tap-highlight-color:transparent; touch-action:manipulation; transition:transform .14s ease, box-shadow .18s ease; border-radius:14px; }
+
+/* plate style */
+.plate{ width:100px; height:100px; border-radius:50%; background: linear-gradient(180deg,#7a4a24 0%, #4b2a12 60%); box-shadow: inset 0 -12px 28px rgba(0,0,0,0.35), 0 10px 30px rgba(0,0,0,0.45); display:flex;align-items:center;justify-content:center;position:relative;overflow:visible;transform-origin:center; }
+.brass-rim{ position:absolute; inset:8px; border-radius:50%; box-shadow: inset 0 6px 14px rgba(255,230,160,0.06), 0 6px 20px rgba(0,0,0,0.25); border:6px solid rgba(255,210,120,0.12); pointer-events:none; }
+.marigold-ring{ position:absolute; inset:-6px; border-radius:50%; background: radial-gradient(circle at 20% 25%, var(--marigold) 0%, transparent 20%), radial-gradient(circle at 50% 15%, #ff9b2a 0%, transparent 18%), radial-gradient(circle at 80% 25%, var(--marigold) 0%, transparent 20%); filter:blur(0.6px); opacity:0.95; transform:scale(1.03); pointer-events:none; }
+.bowl{ width:62%; height:62%; border-radius:50%; background: radial-gradient(circle at 35% 30%, #fff6c3 0%, #ffd27f 28%, #ffb34e 60%, #b26b18 100%); box-shadow: inset 0 -8px 18px rgba(0,0,0,0.25); position:relative; display:flex; align-items:flex-start; justify-content:center; }
+
+.flame-wrap{ position:absolute; top:-12px; display:flex; align-items:center; justify-content:center; pointer-events:none }
+.flame-svg{ width:36px; height:48px; filter:drop-shadow(0 10px 18px rgba(255,110,30,0.18)); transform-origin:center; transition:transform .28s ease; }
+.flame-glow{ position:absolute; top:18px; width:60px; height:10px; border-radius:50%; background: radial-gradient(ellipse at center, rgba(255,160,60,0.5) 0%, rgba(255,160,60,0.12) 40%, transparent 100%); filter:blur(6px); opacity:0.92 }
+.ripple{ position:absolute; inset:0; border-radius:50%; pointer-events:none; transform:scale(0); opacity:0.6; background: radial-gradient(circle, rgba(255,215,120,0.28), rgba(255,140,40,0.06)); transition:transform .38s cubic-bezier(.2,.8,.2,1), opacity .38s ease; }
+
+.diya-label{ position:relative; margin-top:6px; font-family:'Playfair Display',serif; font-weight:700; color:#2b1100; background:var(--card); padding:6px 10px; border-radius:999px; font-size:13px; box-shadow:inset 0 -6px 14px rgba(0,0,0,0.06); display:inline-block; }
+
+.diya.selected .plate{ box-shadow: var(--glow), inset 0 -12px 28px rgba(0,0,0,0.25); transform:translateY(-6px) scale(1.02) }
+.diya.selected .marigold-ring{ transform:scale(1.06); filter:drop-shadow(0 6px 18px rgba(255,150,40,0.08)) }
+
+/* audio control */
+.audio-control{ position:fixed; right:14px; bottom:14px; z-index:120; display:flex;align-items:center;justify-content:center; width:var(--tap-size);height:var(--tap-size);border-radius:14px;background:var(--control-bg);backdrop-filter:blur(6px);cursor:pointer; box-shadow:0 8px 30px rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.04); }
+.audio-control:focus{ outline:3px solid rgba(255,200,90,0.18) }
+.audio-icon{ width:28px; height:28px; display:block; fill:var(--control-accent) }
+.audio-tooltip{ position:fixed; right:calc(14px + var(--tap-size) + 10px); bottom:26px; padding:6px 10px; border-radius:8px; background:rgba(0,0,0,0.6); font-size:13px; color:#fff; opacity:0; transform:translateY(6px); transition:opacity .18s ease,transform .18s ease; pointer-events:none }
+.audio-control:hover + .audio-tooltip,.audio-control:focus + .audio-tooltip{ opacity:1; transform:translateY(0) }
+
+/* responsive tweaks */
+@media (max-width:460px){
+  .diya{width:116px;height:116px}
+  .plate{width:92px;height:92px}
+  .diya-label{font-size:12px}
+  .sun-core{width:170px;height:170px;padding:12px}
+}

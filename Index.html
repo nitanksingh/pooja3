@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <meta name="theme-color" content="#0b1530"/>
+  <title>Chhathi Maiya Ke Kripa — Pasandida Stree</title>
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap" id="pageWrap">
+
+    <div class="horizon" aria-hidden="true"></div>
+
+    <div class="sun-spot" aria-hidden="true">
+      <div class="sun-glow" aria-hidden="true"></div>
+      <div class="sun-core-wrap">
+        <div class="sun-core" role="img" aria-label="Surya Devta at sunset">
+          <div class="sun-rim" aria-hidden="true"></div>
+
+          <!-- Sun message -->
+          <div id="sunMsg" class="sun-msg" aria-live="polite" role="status">
+            <button id="sunClose" class="sun-close" aria-label="Close message" title="Close">×</button>
+            <div id="sunText" style="padding-top:6px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sun-reflection" aria-hidden="true"></div>
+    <div class="water-reflection" aria-hidden="true"></div>
+
+    <div class="garland-wrap" aria-hidden="true">
+      <svg class="marigold-garland" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+        <defs><radialGradient id="petal" cx="40%" cy="30%"><stop offset="0%" stop-color="#fff6bf"/><stop offset="45%" stop-color="#ffb347"/><stop offset="100%" stop-color="#ff7b00"/></radialGradient></defs>
+        <g class="garland-group"><g fill="url(#petal)" stroke="#b86f11" stroke-width="1">
+          <circle cx="36" cy="54" r="11"/><circle cx="84" cy="52" r="11"/><circle cx="132" cy="54" r="11"/>
+          <circle cx="180" cy="52" r="11"/><circle cx="228" cy="54" r="11"/><circle cx="276" cy="52" r="11"/>
+          <circle cx="324" cy="54" r="11"/><circle cx="372" cy="52" r="11"/><circle cx="420" cy="54" r="11"/>
+          <circle cx="468" cy="52" r="11"/><circle cx="516" cy="54" r="11"/><circle cx="564" cy="52" r="11"/>
+          <circle cx="612" cy="54" r="11"/><circle cx="660" cy="52" r="11"/><circle cx="708" cy="54" r="11"/>
+          <circle cx="756" cy="52" r="11"/><circle cx="804" cy="54" r="11"/><circle cx="852" cy="52" r="11"/>
+          <circle cx="900" cy="54" r="11"/><circle cx="948" cy="52" r="11"/><circle cx="996" cy="54" r="11"/>
+          <circle cx="1044" cy="52" r="11"/><circle cx="1092" cy="54" r="11"/>
+        </g></g>
+      </svg>
+    </div>
+
+    <section class="card" role="region" aria-label="Tribute message">
+      <h1>“Suraj dhalat ba — sanjha ke lahar me bhakti ke ujiyara”</h1>
+      <p>Eh shaam ke arghya <strong>Pasandida Stree</strong> ke laagi, prem aur aasirbad ke sath.</p>
+    </section>
+
+    <!-- Grid of diyas -->
+    <div class="diyas" role="list" aria-label="Diyas — select to show blessing">
+      <!-- Diya 1 -->
+      <div class="diya" role="listitem" tabindex="0"
+           data-msg="Har arghya mein Pasandida Stree ke naam — Chhathi Maiya se hum prarthana karit bani ki unkar jeevan sada ujiyara hokh.">
+        <div class="plate" aria-hidden="true">
+          <div class="brass-rim" aria-hidden="true"></div>
+          <div class="marigold-ring" aria-hidden="true"></div>
+          <div class="bowl" aria-hidden="true"></div>
+          <div class="flame-wrap" aria-hidden="true">
+            <!-- Flame SVG (same defs as in CSS) -->
+            <svg class="flame-svg" viewBox="0 0 64 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <g>
+                <path d="M32 2C22 18 14 28 14 40c0 13 13 26 18 37 5-11 18-24 18-37 0-12-8-22-18-38z" fill="url(#g1)"/>
+                <path d="M32 10c-4 6-8 12-8 20 0 9 9 18 12 26 3-8 12-17 12-26 0-8-4-14-8-20-3-4-4-4-8 0z" fill="url(#g2)" opacity="0.95"/>
+              </g>
+            </svg>
+          </div>
+          <div class="flame-glow" aria-hidden="true"></div>
+        </div>
+        <div class="ripple" aria-hidden="true"></div>
+        <div class="diya-label">Pasandida Stree</div>
+      </div>
+
+      <!-- Diya 2 -->
+      <div class="diya" role="listitem" tabindex="0"
+           data-msg="Pasandida Stree, tohar muskaan suruj ke pahil kiran jaisan — har bhor naya aas aur umang le aave.">
+        <div class="plate" aria-hidden="true"><div class="brass-rim"></div><div class="marigold-ring"></div><div class="bowl"></div>
+          <div class="flame-wrap"><svg class="flame-svg" viewBox="0 0 64 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><!-- inline flame --> <path d="M32 2C22 18 14 28 14 40c0 13 13 26 18 37 5-11 18-24 18-37 0-12-8-22-18-38z" fill="url(#g1)"/></svg></div>
+          <div class="flame-glow"></div>
+        </div>
+        <div class="ripple"></div>
+        <div class="diya-label">Pasandida Stree</div>
+      </div>
+
+      <!-- Diya 3 -->
+      <div class="diya" role="listitem" tabindex="0"
+           data-msg="Tohar pyaar kharna ke mithaas jaisan — pavittar, komal aur jindagi bhar meetha raho.">
+        <div class="plate" aria-hidden="true"><div class="brass-rim"></div><div class="marigold-ring"></div><div class="bowl"></div>
+          <div class="flame-wrap"><svg class="flame-svg" viewBox="0 0 64 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M32 2C22 18 14 28 14 40c0 13 13 26 18 37 5-11 18-24 18-37 0-12-8-22-18-38z" fill="url(#g1)"/></svg></div>
+          <div class="flame-glow"></div>
+        </div>
+        <div class="ripple"></div>
+        <div class="diya-label">Pasandida Stree</div>
+      </div>
+
+      <!-- Diya 4 -->
+      <div class="diya" role="listitem" tabindex="0"
+           data-msg="Pasandida Stree ke saath hamar jindagi meharbani, dheeraj aur shanti se bharal raho — ii Chhathi Maiya se prarthana ba.">
+        <div class="plate" aria-hidden="true"><div class="brass-rim"></div><div class="marigold-ring"></div><div class="bowl"></div>
+          <div class="flame-wrap"><svg class="flame-svg" viewBox="0 0 64 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M32 2C22 18 14 28 14 40c0 13 13 26 18 37 5-11 18-24 18-37 0-12-8-22-18-38z" fill="url(#g1)"/></svg></div>
+          <div class="flame-glow"></div>
+        </div>
+        <div class="ripple"></div>
+        <div class="diya-label">Pasandida Stree</div>
+      </div>
+
+      <!-- Diya 5 -->
+      <div class="diya" role="listitem" tabindex="0"
+           data-msg="Chhathi Maiya se prarthana — Pasandida Stree ke jeevan mein sada sukh, swasthya aur samriddhi banal raho.">
+        <div class="plate" aria-hidden="true"><div class="brass-rim"></div><div class="marigold-ring"></div><div class="bowl"></div>
+          <div class="flame-wrap"><svg class="flame-svg" viewBox="0 0 64 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M32 2C22 18 14 28 14 40c0 13 13 26 18 37 5-11 18-24 18-37 0-12-8-22-18-38z" fill="url(#g1)"/></svg></div>
+          <div class="flame-glow"></div>
+        </div>
+        <div class="ripple"></div>
+        <div class="diya-label">Pasandida Stree</div>
+      </div>
+    </div>
+
+    <div class="footer" aria-hidden="true">Chhath Puja • Prem aur Bhakti ke Saath</div>
+  </div>
+
+  
+<audio id="ambience" loop autoplay muted playsinline preload="auto">
+  <source src="audio.mp3" type="audio/mpeg">
+</audio>
+
+  
+  <button id="audioControl" class="audio-control" aria-label="Play music" title="Play / Pause (Space)">
+    <svg id="audioIcon" class="audio-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+  </button>
+  <div class="audio-tooltip" role="status" aria-live="polite">Play music</div>
+
+  
+  <script src="script.js"></script>
+</body>
+</html>
